@@ -21,8 +21,14 @@ public:
 
 protected:
   // Required members
-  GiSTnode  *CreateNode()  const { return new BTnode; }
-  GiSTstore *CreateStore() const { return new GiSTdb(db); }
+  GiSTnode  *CreateNode()  const
+  {
+      return new BTnode;
+  }
+  GiSTstore *CreateStore() const
+  {
+      return new GiSTdb(db);
+  }
 
   // set special property
   int  IsOrdered()    const { return 1; }

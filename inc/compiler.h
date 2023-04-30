@@ -12,6 +12,7 @@
 #define __COMPILER_H__
 
 #include <setjmp.h>
+#include <database.h>
 #ifdef USE_REGEX
 #include <regex.h>
 #endif

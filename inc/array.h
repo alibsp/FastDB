@@ -10,6 +10,8 @@
 
 #ifndef __ARRAY_H__
 #define __ARRAY_H__
+#include "class.h"
+#include "stdtp.h"
 
 BEGIN_FASTDB_NAMESPACE
 

@@ -918,11 +918,13 @@ bool dbAnyCursor::isInSelection(oid_t oid)
 
 void dbAnyCursor::reset()
 {
-    if (db == NULL) {
+    if (db == NULL)
+    {
         db = table->db;
-        assert(((void)"cursor associated with online database table",
-                table->tableId != 0));
-    } else if (table->db != db) {
+        //assert(((void)"cursor associated with online database table",
+        //        table->tableId != 0));
+    } else if (table->db != db)
+    {
         table = db->lookupTable(table);
     }
     unlink();

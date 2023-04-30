@@ -10,6 +10,11 @@
 
 #ifndef __CURSOR_H__
 #define __CURSOR_H__
+//#include "class.h"
+//#include "stdtp.h"
+#include "array.h"
+#include "database.h"
+#include "query.h"
 
 BEGIN_FASTDB_NAMESPACE
 

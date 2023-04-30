@@ -12,6 +12,7 @@
 
 #include "fastdb.h"
 #include "ttree.h"
+#include "stdtp.h"
 
 BEGIN_FASTDB_NAMESPACE
 

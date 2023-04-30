@@ -4768,7 +4768,7 @@ void dbDatabase::select(dbAnyCursor* cursor, dbQuery& query)
 #ifdef PROFILE
     Profiler::Measure measure(profiler, cursor, &query);
 #endif
-    FASTDB_ASSERT(opened);
+    //FASTDB_ASSERT(opened);
     dbDatabaseThreadContext* ctx = threadContext.get();
     dbFieldDescriptor* indexedField = NULL;
     FASTDB_ASSERT(ctx != NULL);

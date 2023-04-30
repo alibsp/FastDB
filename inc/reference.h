@@ -12,6 +12,7 @@
 #define __REFERENCE_H__
 
 #include "stdtp.h"
+#include "class.h"
 BEGIN_FASTDB_NAMESPACE
 
 /**

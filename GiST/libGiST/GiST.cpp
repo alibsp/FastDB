@@ -30,7 +30,7 @@ GiST::Create(const char *filename)
 
     store->Create(filename);
     if (!store->IsOpen())
-	return;
+        return;
 
     page = store->Allocate();
 
@@ -48,13 +48,13 @@ void
 GiST::Open(const char *filename)
 {
     if (IsOpen())
-	return;
+        return;
 
     store = CreateStore();
 
     store->Open(filename);
     if (!store->IsOpen())
-	return;
+        return;
 
     isOpen = 1;
 }
@@ -63,48 +63,49 @@ void
 GiST::Close()
 {
     if (IsOpen()) {
-	store->Close();
-	isOpen = 0;
+        store->Close();
+        isOpen = 0;
     }
 }
 
-void 
-GiST::Insert(const GiSTentry &entry)
+void GiST::Insert(const GiSTentry &entry)
 {
     InsertHelper(entry, 0);
 }
 
-void 
-GiST::InsertHelper(const GiSTentry &entry, 
-		   int level, // level of tree at which to insert
-		   int *splitvec) // a vector to trigger Split
-                                  // instead of forced reinsert
+void GiST::InsertHelper(const GiSTentry &entry, 
+                        int level, // level of tree at which to insert
+                        int *splitvec) // a vector to trigger Split
+// instead of forced reinsert
 {
     GiSTnode *leaf;
     int overflow = 0;
 
     leaf = ChooseSubtree(GiSTRootPage, entry, level);
     leaf->Insert(entry);
-    if (leaf->IsOverFull(*store)) {
-        if (ForcedReinsert() & !leaf->Path().IsRoot() 
-	    && (!splitvec || !splitvec[level])) {
-	    // R*-tree-style forced reinsert
-	    int split[GIST_MAX_LEVELS];
-	    for (int i=0; i < GIST_MAX_LEVELS; i++) 
-	      split[i] = 0;
-	    OverflowTreatment(leaf, entry, split);
-	    overflow = 1;
-	}
-	else {
-	    Split(&leaf, entry);
-	}
-	if (leaf->IsOverFull(*store)) {
-	    // we only should get here if we reinserted, and the node 
-	    // re-filled
-	    assert(overflow);
-	    leaf->DeleteEntry(entry.Position());
-	    Split(&leaf, entry);
-	}
+    if (leaf->IsOverFull(*store))
+    {
+        if (ForcedReinsert() & !leaf->Path().IsRoot()
+                && (!splitvec || !splitvec[level])) {
+            // R*-tree-style forced reinsert
+            int split[GIST_MAX_LEVELS];
+            for (int i=0; i < GIST_MAX_LEVELS; i++)
+                split[i] = 0;
+            OverflowTreatment(leaf, entry, split);
+            overflow = 1;
+        }
+        else
+        {
+            Split(&leaf, entry);
+        }
+        if (leaf->IsOverFull(*store))
+        {
+            // we only should get here if we reinserted, and the node
+            // re-filled
+            assert(overflow);
+            leaf->DeleteEntry(entry.Position());
+            Split(&leaf, entry);
+        }
     }
     else
         WriteNode(leaf);
@@ -115,7 +116,7 @@ GiST::InsertHelper(const GiSTentry &entry,
 
 void 
 GiST::OverflowTreatment(GiSTnode *node, const GiSTentry& entry, 
-			int *splitvec)
+                        int *splitvec)
 {
     GiSTlist<GiSTentry*> deleted;
 
@@ -123,7 +124,7 @@ GiST::OverflowTreatment(GiSTnode *node, const GiSTentry& entry,
     deleted = RemoveTop(node);
     WriteNode(node);
 
-    // AdjustKeys 
+    // AdjustKeys
     AdjustKeys(node, NULL);
 
     // note that we've seen this level already
@@ -131,9 +132,9 @@ GiST::OverflowTreatment(GiSTnode *node, const GiSTentry& entry,
 
     // for each of the deleted entries, call InsertHelper at this level
     while (!deleted.IsEmpty()) {
-      GiSTentry *tmpentry = deleted.RemoveFront();
-      InsertHelper(*tmpentry, node->Level(), splitvec);
-      delete tmpentry;
+        GiSTentry *tmpentry = deleted.RemoveFront();
+        InsertHelper(*tmpentry, node->Level(), splitvec);
+        delete tmpentry;
     }
 }
 
@@ -159,16 +160,16 @@ GiST::AdjustKeys(GiSTnode *node, GiSTnode **parent)
     GiSTnode *P;
 
     if (node->Path().IsRoot())
-	return;
+        return;
 
     // Read in node's parent
     if (parent == NULL) {
-	GiSTpath parent_path = node->Path();
-	parent_path.MakeParent();
-	P = ReadNode(parent_path);
-	parent = &P;
+        GiSTpath parent_path = node->Path();
+        parent_path.MakeParent();
+        P = ReadNode(parent_path);
+        parent = &P;
     } else
-	P = *parent;
+        P = *parent;
 
     // Get the old entry pointing to node
     GiSTentry *entry = P->SearchPtr(node->Path().Page());
@@ -179,20 +180,20 @@ GiST::AdjustKeys(GiSTnode *node, GiSTnode **parent)
     actual->SetPtr(node->Path().Page());
 
     if (!entry->IsEqual(*actual)) {
-	int pos = entry->Position();
-	P->DeleteEntry(pos);
-	P->InsertBefore(*actual, pos);
-	// A split may be necessary.
-	// XXX: should we do Forced Reinsert here too?
-	if (P->IsOverFull(*store)) {
-	    Split(parent, *actual);
-	    GiSTpage page = node->Path().Page();
-	    node->Path() = P->Path();
-	    node->Path().MakeChild(page);
-	} else {
-	    WriteNode(P);
-	    AdjustKeys(P, NULL);
-	}
+        int pos = entry->Position();
+        P->DeleteEntry(pos);
+        P->InsertBefore(*actual, pos);
+        // A split may be necessary.
+        // XXX: should we do Forced Reinsert here too?
+        if (P->IsOverFull(*store)) {
+            Split(parent, *actual);
+            GiSTpage page = node->Path().Page();
+            node->Path() = P->Path();
+            node->Path().MakeChild(page);
+        } else {
+            WriteNode(P);
+            AdjustKeys(P, NULL);
+        }
     }
 
     if (parent == &P) delete P;
@@ -217,28 +218,28 @@ GiST::Delete(const GiSTpredicate& pred)
     GiSTentry *e;
 
     do {
-      if (c == NULL) return;
-      e = c->Next();
+        if (c == NULL) return;
+        e = c->Next();
 
-      GiSTpath path = c->Path();
-      delete c;
+        GiSTpath path = c->Path();
+        delete c;
 
-      if (e == NULL) return;
+        if (e == NULL) return;
 
-      // Read in the node that this belongs to
-      GiSTnode *node = ReadNode(path);
-      node->DeleteEntry(e->Position());
-      WriteNode(node);
+        // Read in the node that this belongs to
+        GiSTnode *node = ReadNode(path);
+        node->DeleteEntry(e->Position());
+        WriteNode(node);
 
-      condensed = CondenseTree(node);
-      delete node;
+        condensed = CondenseTree(node);
+        delete node;
 
-      if (condensed) {
-	ShortenTree();
-	// because the tree changed, we need to search all over again!
-	// XXX - this is inefficient!  users may want to avoid condensing.
-	c = Search(pred);
-      }
+        if (condensed) {
+            ShortenTree();
+            // because the tree changed, we need to search all over again!
+            // XXX - this is inefficient!  users may want to avoid condensing.
+            c = Search(pred);
+        }
     } while (e != NULL);
 }
 
@@ -254,13 +255,13 @@ GiST::ShortenTree()
     GiSTnode *root = ReadNode(path);
 
     if (!root->IsLeaf() && root->NumEntries() == 1) {
-	path.MakeChild((*root)[0]->Ptr());
-	GiSTnode *child = ReadNode(path);
-	store->Deallocate(path.Page());
-	child->SetSibling(0);
-	child->Path().MakeRoot();
-	WriteNode(child);
-	delete child;
+        path.MakeChild((*root)[0]->Ptr());
+        GiSTnode *child = ReadNode(path);
+        store->Deallocate(path.Page());
+        child->SetSibling(0);
+        child->Path().MakeRoot();
+        WriteNode(child);
+        delete child;
     }
 
     delete root;
@@ -278,131 +279,133 @@ GiST::CondenseTree(GiSTnode *node)
 
     while (!node->Path().IsRoot()) {
 
-	GiSTpath parent_path;
-	parent_path = node->Path();
-	parent_path.MakeParent();
+        GiSTpath parent_path;
+        parent_path = node->Path();
+        parent_path.MakeParent();
 
-	GiSTnode *P = ReadNode(parent_path);
+        GiSTnode *P = ReadNode(parent_path);
 
-	GiSTentry *En;
+        GiSTentry *En;
 
-	En = P->SearchPtr(node->Path().Page());
-	assert(En != NULL);
+        En = P->SearchPtr(node->Path().Page());
+        assert(En != NULL);
 
-	// Handle under-full node
-	if (node->IsUnderFull(*store)) {
-	    
-	    if (!IsOrdered()) {
-		GiSTlist<GiSTentry*> list = node->Search(truePredicate);
-		while (!list.IsEmpty()) {
-		    GiSTentry *e = list.RemoveFront();
-		    Q.Append(e);
-		}
-		P->DeleteEntry(En->Position());
-		WriteNode(P);
-		deleted = 1;
-		AdjustKeys(P, NULL);
-	    }
+        // Handle under-full node
+        if (node->IsUnderFull(*store)) {
 
-	    else {
-		// Try to borrow entries, else coalesce with a neighbor
-		// Have to look at left sibling???
+            if (!IsOrdered()) {
+                GiSTlist<GiSTentry*> list = node->Search(truePredicate);
+                while (!list.IsEmpty()) {
+                    GiSTentry *e = list.RemoveFront();
+                    Q.Append(e);
+                }
+                P->DeleteEntry(En->Position());
+                WriteNode(P);
+                deleted = 1;
+                AdjustKeys(P, NULL);
+            }
 
-		GiSTpage neighbor_page = P->SearchNeighbors(node->Path().Page());
-		GiSTpath neighbor_path = node->Path();
-		neighbor_path.MakeSibling(neighbor_page);
+            else {
+                // Try to borrow entries, else coalesce with a neighbor
+                // Have to look at left sibling???
+
+                GiSTpage neighbor_page = P->SearchNeighbors(node->Path().Page());
+                GiSTpath neighbor_path = node->Path();
+                neighbor_path.MakeSibling(neighbor_page);
 
 
-		if (neighbor_page != 0) {
-		    GiSTnode *neighbor;
+                if (neighbor_page != 0) {
+                    GiSTnode *neighbor;
 
-		    // If neighbor is RIGHT sibling...
-		    if (node->Sibling() == neighbor_page) {
-			neighbor = ReadNode(neighbor_path);
-		    } else {
-			neighbor = node;
-			node = ReadNode(neighbor_path);
-		    }
+                    // If neighbor is RIGHT sibling...
+                    if (node->Sibling() == neighbor_page) {
+                        neighbor = ReadNode(neighbor_path);
+                    } else {
+                        neighbor = node;
+                        node = ReadNode(neighbor_path);
+                    }
 
-		    GiSTentry *e = P->SearchPtr(node->Path().Page());
+                    GiSTentry *e = P->SearchPtr(node->Path().Page());
 
-		    node->Coalesce(*neighbor, *e);
+                    node->Coalesce(*neighbor, *e);
 
-		    delete e;
+                    delete e;
 
-		    // If not overfull, coalesce, kill right node
-		    if (!node->IsOverFull(*store)) {
-			node->SetSibling(neighbor->Sibling());
-			WriteNode(node);
+                    // If not overfull, coalesce, kill right node
+                    if (!node->IsOverFull(*store)) {
+                        node->SetSibling(neighbor->Sibling());
+                        WriteNode(node);
 
-			// Delete the neighbor from parent
-			GiSTentry *e = P->SearchPtr(neighbor->Path().Page());
-			P->DeleteEntry(e->Position());
-			WriteNode(P);
-			delete e;
+                        // Delete the neighbor from parent
+                        GiSTentry *e = P->SearchPtr(neighbor->Path().Page());
+                        P->DeleteEntry(e->Position());
+                        WriteNode(P);
+                        delete e;
 
-			store->Deallocate(neighbor->Path().Page());
-			deleted = 1;
-		    }
-		    // If overfull, split (same as borrowing)
-		    else {
-			GiSTnode *node2 = node->PickSplit();
+                        store->Deallocate(neighbor->Path().Page());
+                        deleted = 1;
+                    }
+                    // If overfull, split (same as borrowing)
+                    else {
+                        GiSTnode *node2 = node->PickSplit();
 
-			node2->Path() = neighbor->Path();
-			node2->SetSibling(neighbor->Sibling());
+                        node2->Path() = neighbor->Path();
+                        node2->SetSibling(neighbor->Sibling());
 
-			WriteNode(node);
-			WriteNode(node2);
+                        WriteNode(node);
+                        WriteNode(node2);
 
-			AdjustKeys(node2, &P);
+                        AdjustKeys(node2, &P);
 
-			delete node2;
-			deleted = 1;
-		    }
+                        delete node2;
+                        deleted = 1;
+                    }
 
-		    delete neighbor;
-		}
-	    }
-	}
+                    delete neighbor;
+                }
+            }
+        }
 
-	// Adjust covering predicate
-	if (!deleted) AdjustKeys(node, &P);
+        // Adjust covering predicate
+        if (!deleted) AdjustKeys(node, &P);
 
-	parent_path = node->Path();
-	parent_path.MakeParent();
+        parent_path = node->Path();
+        parent_path.MakeParent();
 
-	delete node;
+        delete node;
 
-	// Propagate deletes
-	if (!deleted) break;
+        // Propagate deletes
+        if (!deleted) break;
 
-	node = P;
+        node = P;
     }
 
     // Re-insert orphaned entries
     while (!Q.IsEmpty()) {
-	GiSTentry *e = Q.RemoveFront();
-	InsertHelper(*e, e->Level());
-	delete e;
+        GiSTentry *e = Q.RemoveFront();
+        InsertHelper(*e, e->Level());
+        delete e;
     }
     return(deleted);
 }
 
-GiSTnode* 
-GiST::ChooseSubtree(GiSTpage page,
-		    const GiSTentry &entry,
-		    int level)
+GiSTnode* GiST::ChooseSubtree(GiSTpage page, const GiSTentry &entry, int level)
 {
     GiSTnode *node;
     GiSTpath path;
 
-    for (;;) {
-	path.MakeChild(page);
-	node = ReadNode(path);
-	if (level == node->Level() || node->IsLeaf())
-	    break;
-	page = node->SearchMinPenalty(entry);
-	delete node;
+    for (;;)
+    {
+        path.MakeChild(page);
+        node = ReadNode(path);
+        //اگر سطح گره ورودی با گره خوانده شده یکی بود یا به برگ رسیدم
+        //ادامه عملیات متوقف شود و گره پیدا شده برگردانده شود
+        if (level == node->Level() || node->IsLeaf())
+            break;
+        //در غیر اینصورت گره ای با کمترین جریمه جستجو شود
+        //
+        page = node->SearchMinPenalty(entry);
+        delete node;
     }
 
     return node;
@@ -414,8 +417,8 @@ GiST::Split(GiSTnode **node, const GiSTentry& entry)
     int went_left = 0, new_root = 0;
 
     if ((*node)->Path().IsRoot()) {
-	new_root = 1;
-	(*node)->Path().MakeChild(store->Allocate());
+        new_root = 1;
+        (*node)->Path().MakeChild(store->Allocate());
     }
 
     GiSTnode *node2 = (*node)->PickSplit();
@@ -423,8 +426,8 @@ GiST::Split(GiSTnode **node, const GiSTentry& entry)
 
     GiSTentry *e = (*node)->SearchPtr(entry.Ptr());
     if (e != NULL) {
-	went_left = 1;
-	delete e;
+        went_left = 1;
+        delete e;
     }
 
     node2->SetSibling((*node)->Sibling());
@@ -440,51 +443,51 @@ GiST::Split(GiSTnode **node, const GiSTentry& entry)
 
     // Create new root if root is being split
     if (new_root) {
-	GiSTnode *root = NewNode(this);
-	root->SetLevel((*node)->Level() + 1);
-	root->InsertBefore(*e1, 0);
-	root->InsertBefore(*e2, 1);
-	root->Path().MakeRoot();
-	WriteNode(root);
-	delete root;
+        GiSTnode *root = NewNode(this);
+        root->SetLevel((*node)->Level() + 1);
+        root->InsertBefore(*e1, 0);
+        root->InsertBefore(*e2, 1);
+        root->Path().MakeRoot();
+        WriteNode(root);
+        delete root;
     } else {
-	// Insert entry for N' in parent
-	GiSTpath parent_path = (*node)->Path();
-	parent_path.MakeParent();
+        // Insert entry for N' in parent
+        GiSTpath parent_path = (*node)->Path();
+        parent_path.MakeParent();
 
-	GiSTnode *parent = ReadNode(parent_path);
+        GiSTnode *parent = ReadNode(parent_path);
 
-	// Find the entry for N in parent
-	GiSTentry *e = parent->SearchPtr((*node)->Path().Page());
-	assert(e != NULL);
+        // Find the entry for N in parent
+        GiSTentry *e = parent->SearchPtr((*node)->Path().Page());
+        assert(e != NULL);
 
-	// Insert the new entry right after it
-	int pos = e->Position();
-	parent->DeleteEntry(pos);
-	parent->InsertBefore(*e1, pos);
-	parent->InsertBefore(*e2, pos+1);
-	delete e;
+        // Insert the new entry right after it
+        int pos = e->Position();
+        parent->DeleteEntry(pos);
+        parent->InsertBefore(*e1, pos);
+        parent->InsertBefore(*e2, pos+1);
+        delete e;
 
-	if (!parent->IsOverFull(*store))
-	    WriteNode(parent);
-	else {
-	    Split(&parent, went_left ? *e1 : *e2);
-	    GiSTpage page = (*node)->Path().Page();
-	    (*node)->Path() = parent->Path();
-	    (*node)->Path().MakeChild(page);
-	    page = node2->Path().Page();
-	    node2->Path() = (*node)->Path();
-	    node2->Path().MakeSibling(page);
-	}
-	    
-	delete parent;
+        if (!parent->IsOverFull(*store))
+            WriteNode(parent);
+        else {
+            Split(&parent, went_left ? *e1 : *e2);
+            GiSTpage page = (*node)->Path().Page();
+            (*node)->Path() = parent->Path();
+            (*node)->Path().MakeChild(page);
+            page = node2->Path().Page();
+            node2->Path() = (*node)->Path();
+            node2->Path().MakeSibling(page);
+        }
+
+        delete parent;
     }
 
     if (!went_left) {
-	delete *node;
-	*node = node2;
+        delete *node;
+        *node = node2;
     } else
-	delete node2;
+        delete node2;
 
     delete e1;
     delete e2;
@@ -501,14 +504,14 @@ GiST::ReadNode(const GiSTpath& path) const
 
 #ifdef PRINTING_OBJECTS
     if (debug) {
-	cout << "READ PAGE " << path.Page() << ":\n";
-	node->Print(cout);
+        cout << "READ PAGE " << path.Page() << ":\n";
+        node->Print(cout);
     }
 #endif
 
     node->Path() = path;
 
-	delete buf;
+    delete buf;
 
     return node;
 }
@@ -523,8 +526,8 @@ GiST::WriteNode(GiSTnode *node)
 
 #ifdef PRINTING_OBJECTS
     if (debug) {
-	cout << "WRITE PAGE " << node->Path().Page() << ":\n";
-	node->Print(cout);
+        cout << "WRITE PAGE " << node->Path().Page() << ":\n";
+        node->Print(cout);
     }
 #endif
     node->Pack(buf);
@@ -543,14 +546,14 @@ GiST::DumpNode(ostream& os, GiSTpath path) const
 
     node->Print(os);
     if (!node->IsLeaf()) {
-	GiSTlist<GiSTentry*> list = node->Search(truePredicate);
-	while (!list.IsEmpty()) {
-	    GiSTentry *e = list.RemoveFront();
-	    path.MakeChild(e->Ptr());
-	    DumpNode(os, path);
-	    path.MakeParent();
-	    delete e;
-	}
+        GiSTlist<GiSTentry*> list = node->Search(truePredicate);
+        while (!list.IsEmpty()) {
+            GiSTentry *e = list.RemoveFront();
+            path.MakeChild(e->Ptr());
+            DumpNode(os, path);
+            path.MakeParent();
+            delete e;
+        }
     }
     delete node;
 #endif

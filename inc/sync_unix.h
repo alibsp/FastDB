@@ -418,7 +418,10 @@ class dbThreadContext {
     void set(T* value) { 
         this->value = value;
     }
-    dbThreadContext() { value = NULL; }
+    dbThreadContext()
+    {
+        value = NULL;
+    }
 };
 
 
