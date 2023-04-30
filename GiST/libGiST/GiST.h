@@ -1,3 +1,9 @@
+/*! \callgraph
+ *  \addtogroup mygrp
+   *  Additional documentation for group 'mygrp'
+   *  @{
+   */
+
 // -*- Mode: C++ -*-
 
 //         GiST.h
@@ -84,3 +90,4 @@ private:
 };
 
 #endif
+/*! @} */

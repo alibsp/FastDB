@@ -1,3 +1,4 @@
+
 // -*- Mode: C++ -*-
 
 //         GiST.cpp
@@ -398,7 +399,7 @@ GiSTnode* GiST::ChooseSubtree(GiSTpage page, const GiSTentry &entry, int level)
     {
         path.MakeChild(page);
         node = ReadNode(path);
-        //اگر سطح گره ورودی با گره خوانده شده یکی بود یا به برگ رسیدم
+        //اگر سطح گره ورودی با گره خوانده شده یکی بود یا به برگ رسیدیم
         //ادامه عملیات متوقف شود و گره پیدا شده برگردانده شود
         if (level == node->Level() || node->IsLeaf())
             break;
