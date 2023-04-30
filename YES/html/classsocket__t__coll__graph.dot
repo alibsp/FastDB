@@ -1,0 +1,8 @@
+digraph "socket_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{socket_t\n|# state\l|+ read()\l+ read()\l+ write()\l+ is_ok()\l+ get_error_text()\l+ accept()\l+ cancel_accept()\l+ shutdown()\l+ close()\l+ get_peer_name()\l+ get_handle()\l+ ~socket_t()\l+ socket_t()\l+ connect()\l+ create_local()\l+ create_global()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

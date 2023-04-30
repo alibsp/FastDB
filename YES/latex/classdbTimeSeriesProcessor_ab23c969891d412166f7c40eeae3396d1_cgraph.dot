@@ -1,0 +1,41 @@
+digraph "dbTimeSeriesProcessor::getLastInterval"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="dbTimeSeriesProcessor\l::getLastInterval",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="dbCursor::get",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbCursor.html#a09c68b6e705dce82b73c7fc6138059cd",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="dbCursor::last",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbCursor.html#a4b2fc3e99be489fd669a18278a204013",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="dbCursor::prev",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbCursor.html#ac05753744aa04751def26c2b2682166c",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="dbAnyCursor::select",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbAnyCursor.html#a74cce7a9edb87a583cce071530ac5a83",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="dbDatabase::select",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a5c648267c177b06ece03c0b882dc3679",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="dbDatabase::beginTransaction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a67382226e535f25d8ea41e1a4a29c979",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="dbDatabase::addLockOwner",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#addf99cfff85de35ed30a025b8f892818",tooltip=" "];
+  Node7 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="dbDatabase::checkVersion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a78274dd5406831e1a481ffdc5eaa0f16",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="dbDatabase::endTransaction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a9acf4cd1d0bb15ff2c5f9d39549d2ee3",tooltip=" "];
+  Node9 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="dbDatabase::handleError",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a239cb01cd3eee54d5ae50763259037c8",tooltip=" "];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="dbDatabase::fatalError",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a7ae83e7bc84e4a52e34b6ed821ee05fd",tooltip=" "];
+  Node7 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="dbDatabase::recovery",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a5154bf2d07f0f7fa55752ad992d41dd4",tooltip=" "];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="dbDatabase::restoreTables\lConsistency",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a3b5a75006ec8ddb05076fe2b058a9791",tooltip=" "];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="dbDatabase::getRow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a7bff04ecc071c89a2e9d27fda8cd326e",tooltip=" "];
+  Node7 -> Node16 [color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="dbDatabase::removeLockOwner",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a813899e7266817ae8bbd08efb18512f5",tooltip=" "];
+  Node6 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
+}

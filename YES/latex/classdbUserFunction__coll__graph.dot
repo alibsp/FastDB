@@ -1,0 +1,8 @@
+digraph "dbUserFunction"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{dbUserFunction\n||+ getParameterType()\l+ getNumberOfParameters()\l+ dbUserFunction()\l+ dbUserFunction()\l+ dbUserFunction()\l+ dbUserFunction()\l+ dbUserFunction()\l+ dbUserFunction()\l+ dbUserFunction()\l+ dbUserFunction()\land 28 more...\l+ find()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

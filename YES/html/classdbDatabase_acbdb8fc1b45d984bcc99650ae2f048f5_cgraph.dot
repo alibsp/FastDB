@@ -1,0 +1,62 @@
+digraph "dbDatabase::createHashTable"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="dbDatabase::createHashTable",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="dbDatabase::beginTransaction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a67382226e535f25d8ea41e1a4a29c979",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="dbDatabase::addLockOwner",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#addf99cfff85de35ed30a025b8f892818",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="dbDatabase::checkVersion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a78274dd5406831e1a481ffdc5eaa0f16",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="dbDatabase::endTransaction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a9acf4cd1d0bb15ff2c5f9d39549d2ee3",tooltip=" "];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="dbDatabase::handleError",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a239cb01cd3eee54d5ae50763259037c8",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="dbDatabase::fatalError",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a7ae83e7bc84e4a52e34b6ed821ee05fd",tooltip=" "];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="dbDatabase::recovery",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a5154bf2d07f0f7fa55752ad992d41dd4",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="dbDatabase::restoreTables\lConsistency",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a3b5a75006ec8ddb05076fe2b058a9791",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="dbDatabase::getRow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a7bff04ecc071c89a2e9d27fda8cd326e",tooltip=" "];
+  Node2 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="dbDatabase::removeLockOwner",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a813899e7266817ae8bbd08efb18512f5",tooltip=" "];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="dbDatabase::putRow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#af0c69119b136ded719412ceb3d34a322",tooltip=" "];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="dbDatabase::allocate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a1dc9f3bd14614f803e622fe974f5ccee",tooltip=" "];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="dbDatabase::extend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a0566e6d9d4166ae35199459d4466f192",tooltip=" "];
+  Node14 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="dbDatabase::get",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a0f15caecea63b2da73defcf52b9731e6",tooltip=" "];
+  Node13 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="dbDatabase::isFree",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a151af1acf48a814d05b8cce5e5e510ec",tooltip=" "];
+  Node16 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="dbDatabase::put",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a8e762278f8441f945fb1251cfa337a9b",tooltip=" "];
+  Node13 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="dbDatabase::markAsAllocated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a72ee036a9ba7964eea364e3505fad369",tooltip=" "];
+  Node18 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="dbDatabase::setDirty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a53b3cef65260865e54b0a965c31cbd24",tooltip=" "];
+  Node19 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="dbDatabase::wasReserved",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a67c9f35342e402223106dfe5459c0835",tooltip=" "];
+  Node12 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="dbDatabase::cloneBitmap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a4bc62f8de139a5889c3eb1a5805246e8",tooltip=" "];
+  Node21 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="dbDatabase::deallocate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a2dd6cab1f292e3eb992755c466f9da58",tooltip=" "];
+  Node22 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

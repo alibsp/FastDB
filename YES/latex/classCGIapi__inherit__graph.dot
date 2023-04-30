@@ -1,0 +1,10 @@
+digraph "CGIapi"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{CGIapi\n||+ serve()\l+ CGIapi()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{WWWapi\n|# sock\l# canceled\l# address\l# db\l# hash_table\l|+ WWWapi()\l+ ~WWWapi()\l+ open()\l+ serve()\l+ connect()\l+ cancel()\l+ close()\l# dispatch()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWWWapi.html",tooltip=" "];
+}

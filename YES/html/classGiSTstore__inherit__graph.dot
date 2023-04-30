@@ -1,0 +1,12 @@
+digraph "GiSTstore"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{GiSTstore\n||+ GiSTstore()\l+ Create()\l+ Open()\l+ Close()\l+ Read()\l+ Write()\l+ Allocate()\l+ Deallocate()\l+ Sync()\l+ IsOpen()\l+ PageSize()\l+ ~GiSTstore()\l# SetOpen()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{GiSTdb\n||+ GiSTdb()\l+ Create()\l+ Open()\l+ Close()\l+ Read()\l+ Write()\l+ Allocate()\l+ Deallocate()\l+ Sync()\l+ PageSize()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGiSTdb.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{GiSTfile\n||+ GiSTfile()\l+ Create()\l+ Open()\l+ Close()\l+ Read()\l+ Write()\l+ Allocate()\l+ Deallocate()\l+ Sync()\l+ PageSize()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGiSTfile.html",tooltip=" "];
+}

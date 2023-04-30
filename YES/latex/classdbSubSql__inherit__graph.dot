@@ -1,0 +1,10 @@
+digraph "dbSubSql"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{dbSubSql\n||+ run()\l+ selectionPage()\l+ queryPage()\l+ defaultPage()\l+ dbSubSql()\l+ ~dbSubSql()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{dbDatabase\n|+ fileOpenFlags\l+ accessType\l+ initSize\l+ extensionQuantum\l+ initIndexSize\l+ freeSpaceReuseThreshold\l+ errorMessage\l# threadPool\l# fixedSizeAllocator\l# threadContext\l# baseAddr\l# header\l# currIndex\l# index\l# parThreads\l# modified\l# currRBitmapPage\land 63 more...\l# internalObjectSize\l|+ open()\l+ open()\l+ close()\l+ commit()\l+ precommit()\l+ rollback()\l+ scheduleBackup()\l+ attach()\l+ attach()\l+ detach()\land 46 more...\l# exportScheme()\l# exportClass()\l# mapId()\l# importField()\l# importRecord()\l# insertRecord()\l# loadMetaTable()\l# cleanup()\l# delayedCommit()\l# backupScheduler()\land 65 more...\l# delayedCommitProc()\l# backupSchedulerProc()\l# execute()\l# deleteCompiledQuery()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html",tooltip=" "];
+}

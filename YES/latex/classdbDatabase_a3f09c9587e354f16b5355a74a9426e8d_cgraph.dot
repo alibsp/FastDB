@@ -1,0 +1,47 @@
+digraph "dbDatabase::exportDatabaseToXml"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="dbDatabase::exportDatabase\lToXml",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="dbDatabase::beginTransaction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a67382226e535f25d8ea41e1a4a29c979",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="dbDatabase::addLockOwner",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#addf99cfff85de35ed30a025b8f892818",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="dbDatabase::checkVersion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a78274dd5406831e1a481ffdc5eaa0f16",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="dbDatabase::endTransaction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a9acf4cd1d0bb15ff2c5f9d39549d2ee3",tooltip=" "];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="dbDatabase::handleError",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a239cb01cd3eee54d5ae50763259037c8",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="dbDatabase::fatalError",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a7ae83e7bc84e4a52e34b6ed821ee05fd",tooltip=" "];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="dbDatabase::recovery",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a5154bf2d07f0f7fa55752ad992d41dd4",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="dbDatabase::restoreTables\lConsistency",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a3b5a75006ec8ddb05076fe2b058a9791",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="dbDatabase::getRow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a7bff04ecc071c89a2e9d27fda8cd326e",tooltip=" "];
+  Node2 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="dbDatabase::removeLockOwner",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a813899e7266817ae8bbd08efb18512f5",tooltip=" "];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="dbDatabase::loadMetaTable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a24b285e14f44da5ef855b00aaf3d79a0",tooltip=" "];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="dbDatabase::completeDescriptors\lInitialization",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a738af925a10c4c90c921dc22dc63ecde",tooltip=" "];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="dbTableDescriptor::\lcheckRelationship",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbTableDescriptor.html#ac60cd66c36e07a730974cb96f61c50ae",tooltip=" "];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="dbTableDescriptor::\lfindSymbol",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbTableDescriptor.html#a11c1191bc1a585afffbfff8a7a05ec85",tooltip=" "];
+  Node14 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 -> Node16 [color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="dbDatabase::findTable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a5b1abfc169742633951bb4abb9e153f8",tooltip=" "];
+  Node12 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 -> Node17 [color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="dbDatabase::linkTable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#ac92dba3c54ea234f5fd6f4c7ff831671",tooltip=" "];
+  Node12 -> Node18 [color="midnightblue",fontsize="10",style="solid"];
+  Node18 [label="dbTableDescriptor::\lsetFlags",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbTableDescriptor.html#a15d228940b36d9737047ef296e86335a",tooltip=" "];
+}

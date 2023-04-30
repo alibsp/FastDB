@@ -1,0 +1,17 @@
+digraph "dbTableDescriptor::size"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="dbTableDescriptor::size",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="dbArray::assign",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbArray.html#a3113760eb60e9b4105b39eb810418838",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="dbArray::dbArray",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbArray.html#a78dc092bfe63a7ac23859fdff1e23b60",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="dbArray::resize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbArray.html#abd6d1fe56a158e9adc18c66f7aaebe8a",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="dbFileTransactionLogger\l::restore",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbFileTransactionLogger.html#a62fe3786e91e13fac9a60bd16f356bcf",tooltip=" "];
+}

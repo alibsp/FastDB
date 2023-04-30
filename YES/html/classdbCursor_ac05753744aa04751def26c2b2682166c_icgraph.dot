@@ -1,0 +1,15 @@
+digraph "dbCursor::prev"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="dbCursor::prev",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="dbTimeSeriesProcessor\l::getLastInterval",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbTimeSeriesProcessor.html#ab23c969891d412166f7c40eeae3396d1",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="dbTimeSeriesReverseIterator\l::next",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbTimeSeriesReverseIterator.html#a4fd188e35fe449ea26697b130d8f02b8",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="dbTimeSeriesReverseIterator\l::start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbTimeSeriesReverseIterator.html#ada5b42fe9944aa22748ee02f225eec8a",tooltip=" "];
+}

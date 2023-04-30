@@ -1,0 +1,13 @@
+digraph "dbTableDescriptor::dbTableDescriptor"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="dbTableDescriptor::\ldbTableDescriptor",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="dbTableDescriptor::\lcalculateFieldsAttributes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbTableDescriptor.html#acb201b94b9e933f01dd97eb7657d9664",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="dbAnyMethodTrampoline\l::optimize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbAnyMethodTrampoline.html#aa0b1cf5d538f6dcf54abf2eee587cc6a",tooltip=" "];
+}

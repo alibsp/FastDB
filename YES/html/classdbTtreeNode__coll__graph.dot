@@ -1,0 +1,8 @@
+digraph "dbTtreeNode"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{dbTtreeNode\n|+ left\l+ right\l+ balance\l+ nItems\l+ item\l|+ find()\l+ prefixSearch()\l+ traverseForward()\l+ traverseBackward()\l+ traverseForward()\l+ traverseBackward()\l+ allocate()\l+ insert()\l+ remove()\l+ balanceRightBranch()\l+ balanceLeftBranch()\l+ purge()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

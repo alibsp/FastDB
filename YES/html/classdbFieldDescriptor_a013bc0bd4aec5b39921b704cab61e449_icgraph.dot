@@ -1,0 +1,18 @@
+digraph "dbFieldDescriptor::calculateNewRecordSize"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="dbFieldDescriptor::\lcalculateNewRecordSize",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="dbDatabase::reformatTable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a18a5d273dfd2b8eb59c4ef97f2617d5c",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="dbDatabase::loadScheme",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a34f7fdfb518f16af21864b9b900477bc",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="dbDatabase::open",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a7292d5348484aa6e90ff5da3c94e01ff",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="dbDatabase::open",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a4e2aa3b70bf2d2124717a6843937b182",tooltip=" "];
+}

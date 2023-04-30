@@ -1,0 +1,14 @@
+digraph "GiSTnode"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{GiSTnode\n||+ GiSTnode()\l+ GiSTnode()\l+ IsA()\l+ operator[]()\l+ operator[]()\l+ Expand()\l+ NumEntries()\l+ SetNumEntries()\l+ SearchPtr()\l+ SearchMinPenalty()\land 26 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{GiSTobject\n||+ IsA()\l+ Copy()\l+ IsEqual()\l+ ~GiSTobject()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGiSTobject.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node3 [label="{BTnode\n||+ IsA()\l+ Copy()\l+ Union()\l+ CreateEntry()\l+ Insert()\l+ InsertBefore()\l+ Coalesce()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBTnode.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node4 [label="{RTnode\n||+ IsA()\l+ CreateEntry()\l+ FixedLength()\l+ Copy()\l+ RTUnionEntries()\l+ PickSplit()\l+ Union()\l+ IsA()\l+ Copy()\l+ PickSplit()\l+ Union()\l+ CreateEntry()\l+ FixedLength()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRTnode.html",tooltip=" "];
+}

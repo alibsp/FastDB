@@ -1,0 +1,8 @@
+digraph "dbSmallBuffer"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{dbSmallBuffer\n|# smallBuf\l# buf\l# used\l|+ dbSmallBuffer()\l+ dbSmallBuffer()\l+ put()\l+ operator char *()\l+ base()\l+ ~dbSmallBuffer()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

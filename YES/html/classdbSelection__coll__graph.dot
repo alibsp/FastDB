@@ -1,0 +1,11 @@
+digraph "dbSelection"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{dbSelection\n|+ nRows\l+ pos\l|+ createNewSegment()\l+ add()\l+ sort()\l+ toArray()\l+ truncate()\l+ dbSelection()\l+ reverse()\l+ reset()\l+ compare()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +first\n+curr\n+last" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{dbSelection::segment\n|+ nRows\l+ rows\l|+ segment()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbSelection_1_1segment.html",tooltip=" "];
+  Node2 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +prev\n+next" ,arrowhead="odiamond",fontname="Helvetica"];
+}

@@ -1,0 +1,12 @@
+digraph "dbAnyContainer"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{dbAnyContainer\n|# fd\l|# create()\l# purge()\l# deallocate()\l# add()\l# remove()\l# search()\l# prefixSearch()\l# prefixSearch()\l# spatialSearch()\l# dbAnyContainer()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{dbAnyReference\n|# oid\l|+ dbAnyReference()\l+ getOid()\l+ operator\>()\l+ operator\<()\l+ isNull()\l+ dbDescribeComponents()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbAnyReference.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node3 [label="{dbContainer\< T \>\n||+ search()\l+ search()\l+ prefixSearch()\l+ search()\l+ spatialSearch()\l+ create()\l+ purge()\l+ deallocate()\l+ add()\l+ remove()\land 7 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbContainer.html",tooltip=" "];
+}

@@ -1,0 +1,50 @@
+digraph "dbDatabase::updateCursors"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="dbDatabase::updateCursors",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="dbDatabase::insertInverse\lReference",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a6bf2358ecc970b0eca70ced93c2e825e",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="dbDatabase::insertRecord",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a9de489204ef31d019e9eaa66e210c2e4",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="dbDatabase::importDatabase\lFromXml",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a732eb89bfd4a4e5d5d86a86dd7dd93f0",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="dbDatabase::importDatabase\lFromXml",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a143bc9a6e525da2bb8d2972e64f21131",tooltip=" "];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="dbFileTransactionLogger\l::restore",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbFileTransactionLogger.html#a62fe3786e91e13fac9a60bd16f356bcf",tooltip=" "];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="dbDatabase::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a3c190e532238b7505976b169bfff55ab",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="dbAnyCursor::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbAnyCursor.html#ac84c01ba117088d1f7cfafbb033c63e3",tooltip=" "];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="dbTimeSeriesProcessor\l::remove",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbTimeSeriesProcessor.html#a5b9c0f2e29ed43c74e0dd7576979f0b2",tooltip=" "];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="dbDatabase::remove",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a43d95dcca86929a38385e913b6d82d34",tooltip=" "];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="dbAnyCursor::remove",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbAnyCursor.html#a7d57bf0cf5e82e273c1df6ce94307eb7",tooltip=" "];
+  Node11 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="dbAnyCursor::removeAllSelected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbAnyCursor.html#a16812a92fe064956474b066451ee5dad",tooltip=" "];
+  Node10 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="dbDatabase::removeInverse\lReference",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a5d97827e01d0a3576409f1c68f1c3b78",tooltip=" "];
+  Node13 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="dbDatabase::removeInverse\lReferences",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a8bfc7b7c8d974458643050db1862e2b9",tooltip=" "];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="dbDatabase::deleteTable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#af352b817b47cf712846963c12d856030",tooltip=" "];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="dbDatabase::dropTable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#adeb26f12690c4e9bc23cd7a705588dd7",tooltip=" "];
+  Node15 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="dbAnyCursor::removeAll",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbAnyCursor.html#aeb1e5ca701dc0c3efb16edd8343f1646",tooltip=" "];
+  Node17 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

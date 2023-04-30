@@ -1,0 +1,24 @@
+digraph "GiSTpredicate"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{GiSTpredicate\n||+ IsA()\l+ Consistent()\l+ ~GiSTpredicate()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{GiSTobject\n||+ IsA()\l+ Copy()\l+ IsEqual()\l+ ~GiSTobject()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGiSTobject.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node3 [label="{AndPredicate\n||+ AndPredicate()\l+ Consistent()\l+ Copy()\l+ ~AndPredicate()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAndPredicate.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node4 [label="{BTpredicate\n||+ BTpredicate()\l+ BTpredicate()\l+ Copy()\l+ IsA()\l+ Consistent()\l+ SetOper()\l+ SetValue()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBTpredicate.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node5 [label="{NotPredicate\n||+ NotPredicate()\l+ Consistent()\l+ Copy()\l+ ~NotPredicate()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNotPredicate.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node6 [label="{OrPredicate\n||+ OrPredicate()\l+ Consistent()\l+ Copy()\l+ ~OrPredicate()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOrPredicate.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node7 [label="{PtrPredicate\n||+ PtrPredicate()\l+ Consistent()\l+ Copy()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPtrPredicate.html",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node8 [label="{RTpredicate\n||+ RTpredicate()\l+ RTpredicate()\l+ Copy()\l+ IsA()\l+ Consistent()\l+ SetOper()\l+ SetValue()\l+ RTpredicate()\l+ RTpredicate()\l+ Copy()\l+ IsA()\l+ Consistent()\l+ SetOper()\l+ SetValue()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRTpredicate.html",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node9 [label="{TruePredicate\n||+ TruePredicate()\l+ Consistent()\l+ Copy()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTruePredicate.html",tooltip=" "];
+}

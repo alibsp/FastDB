@@ -1,0 +1,19 @@
+digraph "dbDatabase::completeDescriptorsInitialization"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="dbDatabase::completeDescriptors\lInitialization",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="dbDatabase::loadMetaTable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a24b285e14f44da5ef855b00aaf3d79a0",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="dbDatabase::exportDatabase\lToXml",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a3f09c9587e354f16b5355a74a9426e8d",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="dbDatabase::exportDatabase\lToXml",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a5cdf49bcebd9ed31b1e766de0cf90145",tooltip=" "];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="dbDatabase::importDatabase\lFromXml",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a732eb89bfd4a4e5d5d86a86dd7dd93f0",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="dbDatabase::importDatabase\lFromXml",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a143bc9a6e525da2bb8d2972e64f21131",tooltip=" "];
+}

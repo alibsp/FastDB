@@ -1,0 +1,19 @@
+digraph "dbDatabase::addNewTable"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="dbDatabase::addNewTable",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="dbDatabase::allocateRow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a56838815ecf19269f58d19de695a2e7a",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="dbDatabase::getRow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#a7bff04ecc071c89a2e9d27fda8cd326e",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="dbDatabase::linkTable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbDatabase.html#ac92dba3c54ea234f5fd6f4c7ff831671",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="dbTableDescriptor::\lstoreInDatabase",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbTableDescriptor.html#a8fc8b39697e5d0fa02263433e9d5d99f",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="dbTableDescriptor::\ltotalNamesLength",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbTableDescriptor.html#aa6a88bd4139806e041370bc9ac765475",tooltip=" "];
+}

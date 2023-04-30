@@ -1,0 +1,14 @@
+digraph "GiST"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{GiST\n||+ GiST()\l+ IsA()\l+ Create()\l+ Open()\l+ Close()\l+ Search()\l+ Insert()\l+ Delete()\l+ Sync()\l+ Store()\l+ IsOpen()\l+ IsOrdered()\l+ ForcedReinsert()\l+ ~GiST()\l# CreateStore()\l# CreateNode()\l# RemoveTop()\l# RemoveRatio()\l# ReadNode()\l# WriteNode()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{GiSTobject\n||+ IsA()\l+ Copy()\l+ IsEqual()\l+ ~GiSTobject()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGiSTobject.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node3 [label="{BT\n|# db\l|+ IsA()\l+ BT()\l# CreateNode()\l# CreateStore()\l# IsOrdered()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBT.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node4 [label="{RT\n|# db\l|+ IsA()\l+ RT()\l+ IsA()\l+ RT()\l# CreateNode()\l# CreateStore()\l# ForcedReinsert()\l# RemoveTop()\l# CreateNode()\l# CreateStore()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRT.html",tooltip=" "];
+}

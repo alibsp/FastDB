@@ -1,0 +1,14 @@
+digraph "dbAnyReference"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{dbAnyReference\n|# oid\l|+ dbAnyReference()\l+ getOid()\l+ operator\>()\l+ operator\<()\l+ isNull()\l+ dbDescribeComponents()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{dbAnyContainer\n|# fd\l|# create()\l# purge()\l# deallocate()\l# add()\l# remove()\l# search()\l# prefixSearch()\l# prefixSearch()\l# spatialSearch()\l# dbAnyContainer()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbAnyContainer.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{dbContainer\< T \>\n||+ search()\l+ search()\l+ prefixSearch()\l+ search()\l+ spatialSearch()\l+ create()\l+ purge()\l+ deallocate()\l+ add()\l+ remove()\land 7 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbContainer.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{dbReference\< T \>\n||+ dbDescribeComponents()\l+ operator=()\l+ operator=()\l+ unsafeAssign()\l+ operator==()\l+ operator\>()\l+ operator\<()\l+ operator!=()\l+ operator==()\l+ operator!=()\l+ dbReference()\l+ dbReference()\l+ dbReference()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbReference.html",tooltip=" "];
+}

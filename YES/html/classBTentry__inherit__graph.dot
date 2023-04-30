@@ -1,0 +1,12 @@
+digraph "BTentry"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{BTentry\n||+ BTentry()\l+ BTentry()\l+ BTentry()\l+ BTentry()\l+ ~BTentry()\l+ IsA()\l+ Copy()\l+ IsEqual()\l+ Penalty()\l+ Compress()\land 9 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{GiSTentry\n|# node\l# ptr\l# position\l# level\l# key\l|+ GiSTentry()\l+ GiSTentry()\l+ GiSTentry()\l+ ~GiSTentry()\l+ Penalty()\l+ CompressedLength()\l+ Copy()\l+ Compress()\l+ Decompress()\l+ Compare()\land 11 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGiSTentry.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{GiSTobject\n||+ IsA()\l+ Copy()\l+ IsEqual()\l+ ~GiSTobject()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGiSTobject.html",tooltip=" "];
+}

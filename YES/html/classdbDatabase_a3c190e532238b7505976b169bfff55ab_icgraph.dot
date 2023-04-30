@@ -1,0 +1,15 @@
+digraph "dbDatabase::update"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="dbDatabase::update",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="dbFileTransactionLogger\l::restore",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbFileTransactionLogger.html#a62fe3786e91e13fac9a60bd16f356bcf",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="dbAnyCursor::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbAnyCursor.html#ac84c01ba117088d1f7cfafbb033c63e3",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="dbTimeSeriesProcessor\l::remove",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classdbTimeSeriesProcessor.html#a5b9c0f2e29ed43c74e0dd7576979f0b2",tooltip=" "];
+}

@@ -1,0 +1,10 @@
+digraph "replication_socket_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{replication_socket_t\n|# sockets\l# n_sockets\l# succeed\l|+ read()\l+ write()\l+ is_ok()\l+ get_error_text()\l+ shutdown()\l+ close()\l+ handleError()\l+ accept()\l+ cancel_accept()\l+ get_peer_name()\l+ get_handle()\l+ ~replication_socket_t()\l+ connect()\l# replication_socket_t()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{socket_t\n|# state\l|+ read()\l+ read()\l+ write()\l+ is_ok()\l+ get_error_text()\l+ accept()\l+ cancel_accept()\l+ shutdown()\l+ close()\l+ get_peer_name()\l+ get_handle()\l+ ~socket_t()\l+ socket_t()\l+ connect()\l+ create_local()\l+ create_global()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classsocket__t.html",tooltip=" "];
+}

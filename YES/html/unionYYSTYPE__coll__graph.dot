@@ -1,0 +1,18 @@
+digraph "YYSTYPE"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{YYSTYPE\n|+ string\l+ oper\l+ number\l+ oper\l+ dbl\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +pred" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{GiSTpredicate\n||+ IsA()\l+ Consistent()\l+ ~GiSTpredicate()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGiSTpredicate.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{GiSTobject\n||+ IsA()\l+ Copy()\l+ IsEqual()\l+ ~GiSTobject()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGiSTobject.html",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +key" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{RTkey\n|+ RTentry\l+ xl\l+ xh\l+ yl\l+ yh\l|+ RTkey()\l+ RTkey()\l+ RTkey()\l+ RTkey()\l+ Copy()\l+ ~RTkey()\l+ IsA()\l+ operator=()\l+ operator==()\l+ overlap()\land 24 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRTkey.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="firebrick4",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +key" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{BTkey\n|+ type\l+ key\l+ len\l|+ BTkey()\l+ BTkey()\l+ Set()\l+ BTkey()\l+ operator=()\l+ BTkey()\l+ ~BTkey()\l+ Compare()\l+ operator\<()\l+ operator\<=()\l+ operator==()\l+ operator!=()\l+ operator\>=()\l+ operator\>()\l+ Print()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBTkey.html",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="firebrick4",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+}

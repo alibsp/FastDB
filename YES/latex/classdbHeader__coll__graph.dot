@@ -1,0 +1,8 @@
+digraph "dbHeader"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{dbHeader\n|+ size\l+ curr\l+ dirty\l+ initialized\l+ index\l+ shadowIndex\l+ indexSize\l+ shadowIndexSize\l+ indexUsed\l+ freeList\l+ root\l+ majorVersion\l+ minorVersion\l+ mode\l+ used\l|+ getVersion()\l+ isCompatible()\l+ getCurrentMode()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}
